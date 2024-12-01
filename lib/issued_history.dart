@@ -16,7 +16,7 @@ class _HistoryState extends State<History> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(90, 19, 175, 239),
+        backgroundColor: const Color.fromARGB(90, 19, 174, 239),
         title: const Text('Books History',
           style: TextStyle(fontWeight: FontWeight.bold),),
         actions: [
@@ -30,52 +30,52 @@ class _HistoryState extends State<History> {
       ),
 
       body: const Center(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blueAccent, // Color for selected tab
-        unselectedItemColor: Colors.grey,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index; // Update selected index
-          });
-          switch (index) {
-            case 0:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Menupage()),
-              );
-              break;
-            case 1:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Fines()),
-              );
-              break;
-            case 2:
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) => Settings()),
-              );
-              break;
-            default:
-              break;
-          }
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.dashboard),
+      //       label: 'Dashboard',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.notifications),
+      //       label: 'Notifications',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.settings),
+      //       label: 'Settings',
+      //     ),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   selectedItemColor: Colors.blueAccent, // Color for selected tab
+      //   unselectedItemColor: Colors.grey,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _selectedIndex = index; // Update selected index
+      //     });
+      //     switch (index) {
+      //       case 0:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Menupage()),
+      //         );
+      //         break;
+      //       case 1:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Fines()),
+      //         );
+      //         break;
+      //       case 2:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Settings()),
+      //         );
+      //         break;
+      //       default:
+      //         break;
+      //     }
+      //   },
+      // ),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:library_management/issued_history.dart';
 import 'package:library_management/Fine_on_book.dart';
 import 'package:library_management/Research_paper.dart';
 import 'package:library_management/Setting_page.dart';
+import 'package:library_management/Notifications.dart';
 
 class Menupage extends StatefulWidget {
   const Menupage({super.key});
@@ -16,7 +17,8 @@ class _MenupageState extends State<Menupage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // backgroundColor: const Color.fromARGB(255, 226, 219, 181),
+
+
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(90, 19, 175, 239),
         title: const Text('Dashboard',
@@ -68,13 +70,9 @@ class _MenupageState extends State<Menupage> {
          ),
 
           Container(
-            width: 400.0,
+            width: 380.0,
             height: 150.0,
              color: const Color.fromARGB(25,10,20,20),
-            // child: const Card(
-            //
-            //   elevation: 5.0,
-            // ),
           ),
           const SizedBox(height: 10.0,),
           // Container(
@@ -125,26 +123,26 @@ class _MenupageState extends State<Menupage> {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueAccent, // Color for selected tab
-        unselectedItemColor: Colors.grey,
+       // unselectedItemColor: Colors.grey,
         onTap: (index) {
           setState(() {
             _selectedIndex = index; // Update selected index
           });
           switch (index) {
             case 0:
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) =>const Menupage()),
               );
              break;
             case 1:
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) =>const Fines()),
+                MaterialPageRoute(builder: (context) =>const notifications()),
               );
               break;
             case 2:
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) =>const Settings()),
               );

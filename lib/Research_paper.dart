@@ -36,22 +36,23 @@ class _ResearchPaperState extends State<ResearchPaper> {
         onPressed: (){
           showDialog(context: context,
               builder: (BuildContext context){
-            return SizedBox(
-               width: 300.0,
-            //  height: 200.0,
-             child:AlertDialog(
+             return AlertDialog(
+               shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10.0))),
                title: const Text('Request reaserach paper'),
-               content: const Column(
-                   children: [
-                     TextField(
-                      // controller: titleController,
-                       decoration: InputDecoration(labelText: 'Title'),
-                     ),
-                     TextField(
-                      // controller: authorController,
-                       decoration: InputDecoration(labelText: 'Author'),
-                     ), // Add any additional fields or widgets as needed.
-                   ],
+               content: Container(
+                 height: 150,
+                 child: const Column(
+                     children: [
+                       TextField(
+                        // controller: titleController,
+                         decoration: InputDecoration(labelText: 'Title'),
+                       ),
+                       TextField(
+                        // controller: authorController,
+                         decoration: InputDecoration(labelText: 'Author'),
+                       ), // Add any additional fields or widgets as needed.
+                     ],
+                 ),
                ),
                actions: [
                  TextButton(onPressed: (){
@@ -59,57 +60,58 @@ class _ResearchPaperState extends State<ResearchPaper> {
                  },
                      child:const Text('Submit')),
                ],
-             ),
-            );
+             );
               },
           );
         },
 
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: (index) {
-          setState(() {
-            _selectedIndex = index; // Update selected index
-          });
-          switch (index) {
-            case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>const Menupage()),
-              );
-              break;
-            case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>const Fines()),
-              );
-              break;
-            case 2:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>const Settings()),
-              );
-              break;
-            default:
-              break;
-          }
-        },
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.dashboard),
+      //       label: 'Dashboard',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.notifications),
+      //       label: 'Notifications',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.settings),
+      //       label: 'Settings',
+      //     ),
+      //   ],
+      //   currentIndex: _selectedIndex,
+      //   selectedItemColor: Colors.blueAccent, // Color for selected tab
+      //   unselectedItemColor: Colors.grey,
+      //   onTap: (index) {
+      //     setState(() {
+      //       _selectedIndex = index; // Update selected index
+      //     });
+      //     switch (index) {
+      //       case 0:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Menupage()),
+      //         );
+      //         break;
+      //       case 1:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Fines()),
+      //         );
+      //         break;
+      //       case 2:
+      //         Navigator.pushReplacement(
+      //           context,
+      //           MaterialPageRoute(builder: (context) =>const Settings()),
+      //         );
+      //         break;
+      //       default:
+      //         break;
+      //     }
+      //   },
+      // ),
     );
   }
 }

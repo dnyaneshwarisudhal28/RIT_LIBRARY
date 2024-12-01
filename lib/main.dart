@@ -70,9 +70,6 @@ class _LoginpageState extends State<Loginpage> {
                   ),),
               ),
 
-             // const SizedBox(height: 5.0,),
-
-
               //username textfield
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -96,7 +93,8 @@ class _LoginpageState extends State<Loginpage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 10.0,),
+              const SizedBox(height: 30.0,),
+              //password text
               Container(
                 margin: const EdgeInsets.only(right:262.0),
                 child: const Text('Password',
@@ -108,31 +106,31 @@ class _LoginpageState extends State<Loginpage> {
               ),
 
               //password textfield
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child:Container(
-                  width: 350.0,
-                  height: 50.0,
-                  child: const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.lock_outline_sharp,size: 18.0,),
-                      labelText: 'Enter Password',
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black)
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                child:SizedBox(
+                    width: 350.0,
+                    height: 50.0,
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.lock_outline_sharp,size: 18.0,),
+                        labelText: 'Enter Password',
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black)
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey),
+                        ),
+                        fillColor: Color.fromARGB(30, 50, 40, 50),
+                        filled: true,
                       ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey),
-                      ),
-                      fillColor: Color.fromARGB(30, 50, 40, 50),
-                      filled: true,
                     ),
-                  ),
                 ),
 
               ),
 
-              const SizedBox(height: 30.0), // Add space between text fields and button
+              const SizedBox(height: 35.0), // Add space between text fields and button
 
               // Login button
               ElevatedButton(
@@ -140,7 +138,7 @@ class _LoginpageState extends State<Loginpage> {
                   Navigator.push(context,MaterialPageRoute(builder:(context)=>const Menupage()));
                 },
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(28, 322, 400, 20)),
+                    backgroundColor: MaterialStateProperty.all(const Color.fromRGBO(21, 18,110,20),),
                     padding: MaterialStateProperty.all(const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40.0)),
                     shape: MaterialStateProperty.all(RoundedRectangleBorder( borderRadius: BorderRadius.circular(10.0)))
                 ),
@@ -150,7 +148,6 @@ class _LoginpageState extends State<Loginpage> {
                     fontSize: 18.0,
                   ),),
               ),
-
             ],
           ),
         ),
